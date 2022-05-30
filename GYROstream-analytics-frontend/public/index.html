@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>GYROstream - BE HEARD. GET YOUR RECORD OUT.</title>
+      <meta charset="utf-8">
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/animations.css">
+      <link rel="stylesheet" href="css/fonts.css">
+      <link rel="stylesheet" href="css/cue.css">
+      <link rel="stylesheet" href="css/style-new.css">
+      <link rel="stylesheet" href="css/main.css" class="color-switcher-link">
+      <link rel="stylesheet" href="css/shop.css" class="color-switcher-link">
+      <link rel="stylesheet" href="css/mediaelementplayer-legacy.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="css/jquery-ui.css">
+      <!-- <script src="js/vendor/modernizr-2.6.2.min.js"></script> -->
+      <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+      <style>
+         .caret { border:0;}
+      </style>
+      <script>
+         document.querySelector(".card-flip").classList.toggle("flip");
+         Holder.addTheme('gray', {
+         bg: '#777',
+         fg: 'rgba(255,255,255,.75)',
+         font: 'Helvetica',
+         fontweight: 'normal'
+         });
+      </script>
+      <script src="//code.jquery.com/jquery-1.12.4.js"></script> 
+      <script src="js/jquery.form-validator.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.js"></script>  
+      <!-- Global site tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118607539-1"></script>
+      <script>
+         window.dataLayer = window.dataLayer || [];
+         function gtag(){dataLayer.push(arguments);}
+         gtag('js', new Date());
+         
+         gtag('config', 'UA-118607539-1');
+      </script>
+      <meta charset="utf-8" />
+      <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta name="theme-color" content="#000000" />
+      <meta
+         name="description"
+         content="Web site created using create-react-app"
+         />
+      <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+      <!--
+         manifest.json provides metadata used when your web app is installed on a
+         user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+         -->
+      <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+      <!--
+         Notice the use of %PUBLIC_URL% in the tags above.
+         It will be replaced with the URL of the `public` folder during the build.
+         Only files inside the `public` folder can be referenced from the HTML.
+         
+         Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+         work correctly both with client-side routing and a non-root public URL.
+         Learn how to configure a non-root public URL by running `npm run build`.
+         -->
+      <!-- <title>GYROstream-analytics</title> -->
+   </head>
+   <body>
+      <noscript>You need to enable JavaScript to run this app.</noscript>
+      <nav class="navbar ds menu-dop bor-radius mb0 bor-radius">
+      <div class="container-fluid">
+         <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand absolute-position" href="/dashboard.php"><img src="images/logo.png" alt="" id='web' class='img-responsive'></a>
+            <div class="cloud-under-logo1 hidden-sm hidden-xs"></div>
+         </div>
+         <div id="navbar1" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav ml200 mbi-zero">
+               <li class="active" style='z-index: 7;'>
+                  <a href="dashboard.php" title="Dashboard"><i class="fa fa-th-large" title="Dashboard" aria-hidden="true"></i> <span>My Dashboard</span></a>
+               </li>
+               <li class="dropdown my-new-menu">
+                  <a href="create_new_release.php?id=new&step=create_new" title="" ><i class="fa fa-plus" title="Music" aria-hidden="true"></i> <span>New Release</span></a>                      
+               </li>
+               <li class="my-music">
+                  <a href="catalogue.php" title="View all my music"><i class="fa fa-music" title="Music" aria-hidden="true"></i> <span>My Catalogue</span></a>
+               </li>
+               <li class="dropdown my-sales">
+                  <a href="#" title="View my sales and trends" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" onClick="mysales_toggle()"><i class="fa fa-bar-chart" title="Sales" aria-hidden="true"></i> <span>My Sales <b class="caret"></b></span> </a>                     
+                  <ul class="dropdown-menu mysales_toggle">
+                     <li class="sales-royalties">
+                        <a href="payout.php" title="View the royalties I've earned"><i class="fa fa-pie-chart" title="Royalties charts" aria-hidden="true"></i> <span>Royalty earnings</span></a>                           
+                     </li>
+                     <li class="sales-trends">
+                        <a href="analytics.php" title="View my streaming analytics"><i class="fa fa-line-chart" title="Sales trends" aria-hidden="true"></i> <span> Sales trends</span></a>
+                     </li>
+                  </ul>
+               </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+               <li class="dropdown my-account padding-left18">
+                  <a href="#" class="dropdown-toggle parent-link" id="heading-dropdown" data-toggle="dropdown" onClick="myacount_toggle()">
+                  <i class="fa fa-user"></i> <span>My Account <b class="caret"></b></span>
+                  </a>
+                  <ul class="dropdown-menu myacount_toggle">
+                     <li class="account-settings">
+                        <a href="account_setting.php" title="See my account">
+                        <i class="fa fa-user" title="subscriptions calendar" aria-hidden="true"></i> <span> Account Setting</span>
+                        </a>                    
+                     </li>
+                     <li class="account-history">
+                        <a href="payout.php" title="My payout details"><i class="fa fa-credit-card" title="add new" aria-hidden="true"></i> <span>Payout</span>
+                        </a>                            
+                     </li>
+                     <li class="account-password">
+                        <a href="order-history.php" title="View all Order history"><i class="fa fa-history" title="password" aria-hidden="true"></i> <span>Order History</span>
+                        </a>                            
+                     </li>
+                     <li class="account-logout">
+                        <a href="logout.php" title="Change my password"><i class="fa fa-sign-out" title="sign out" aria-hidden="true"></i> <span>Log out</span></a>                          
+                     </li>
+                  </ul>
+               </li>
+               <li class="dropdown my-account padding-left18">
+                  <a href="#" class="dropdown-toggle parent-link" id="heading-dropdown" data-toggle="dropdown" onClick="help_toggle()">
+                  <i class="fa fa-user"></i> <span>Help<b class="caret"></b></span>
+                  </a>
+                  <ul class="dropdown-menu help_toggle">
+                     <li class="account-settings">
+                        <a href="faq.php" title="">
+                        <i class="fa fa-question-circle" title="subscriptions calendar" aria-hidden="true"></i> <span>FAQs</span>
+                        </a>                    
+                     </li>
+                     <li class="account-settings">
+                        <a href="blog.php" title="">
+                        <i class="fa fa-users" title="subscriptions calendar" aria-hidden="true"></i> <span>Blog</span>
+                        </a>                    
+                     </li>
+                     <li class="account-settings">
+                        <a class="lightbox-201323421054034">
+                        <i class="fa fa-envelope" title="subscriptions calendar" aria-hidden="true"></i> <span>Contact Us</span>
+                        </a>                    
+                     </li>
+                  </ul>
+               </li>
+            </ul>
+         </div>
+      </div>
+
+      <div id="root" class="ds ms page_about parallax" style="color:black"></div>
+      <!--
+         This HTML file is a template.
+         If you open it directly in the browser, you will see an empty page.
+         
+         You can add webfonts, meta tags, or analytics to this file.
+         The build step will place the bundled scripts into the <body> tag.
+         
+         To begin the development, run `npm start` or `yarn start`.
+         To create a production bundle, use `npm run build` or `yarn build`.
+         -->
+      <footer class="page_footer parallax ds ms pt20" id="contact" style='z-index:3; background-repeat: repeat-y;'>
+         <div class="container">
+            <div class="row mt20 pb20">
+               <div class="col-md-4 col-sm-6 ">
+                  <h4 class="widget-titile" >About Us</h4>
+                  <ul class="list1 no-bullets no-top-border no-bottom-border greylinks">
+                     <li> <a href="about.php">Mission statement</a> </li>
+                     <li> <a href="terms_and_conditions.php" target="_blank">Terms of Service</a> </li>
+                     <li> <a href="terms_and_conditions.php#privacy_policy" target="_blank">Privacy policy</a> </li>
+                  </ul>
+               </div>
+               <div class="col-md-4 col-sm-6 mb0">
+                  <h4 class="widget-titile">FAQs & SUPPORT</h4>
+                  <button class="theme_button color1" onclick="openWidget()" type="button" >Click here for common questions</button>
+                  <br>
+                  <style type="text/css">
+                     .jt-feedback div, iframe, .jt-content{
+                     background-color: transparent !important;
+                  </style>
+                  <script src ="https://form.jotform.com/static/feedback2.js" type="text/javascript"></script><script type="text/javascript"> var JFL_201323421054034 = new JotformFeedback({ formId: '201323421054034', base: 'https://form.jotform.com/', windowTitle: 'Heading', background: 'rgba(0,0,0,0.87)', fontColor: '#FFFFFF', type: '2', height: 640, width: 660, openOnLoad: false }); </script>
+                  <a class="lightbox-201323421054034">
+                  <button class="theme_button color1" type="button" >Contact Support</button></a>
+                  <br>    
+               </div>
+               <div class="col-md-4 col-sm-6">
+                  <h4 class="widget-titile">Connect With Us</h4>
+                  <div class="topmargin_20">
+                     <a href="http://www.facebook.com/gyrostream" target="_blank" class="social-icon color-bg-icon socicon-facebook"></a>
+                     <a href="https://www.instagram.com/gyrostream/" target="_blank" class="social-icon color-bg-icon socicon-instagram"></a> 
+                     <a href="https://twitter.com/gyrostream" target="_blank" class="social-icon color-bg-icon socicon-twitter"></a>
+                     <a href="https://open.spotify.com/user/28hbpwcu3sknf0zpkroxflucd?si=L8LbFC_qT0esq2o6uewv-A" target="_blank" class="social-icon color-bg-icon socicon-spotify"></a>
+                     <a href="https://soundcloud.com/gyrostream" target="_blank" class="social-icon color-bg-icon socicon-soundcloud"></a>
+                  </div>
+               </div>
+            </div>
+            <div class="row pt20 pb20" style="border-top: 1px solid #636363;">
+               <div class="col-sm-12 text-center">
+                  <p class="small-text">Copyright 2020 All Rights Reserved.</p>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <div id="snackbar">With in 24 hours we will get back to you. Thanks you.</div>
+      <style>
+         #snackbar {
+         visibility: hidden;
+         min-width: 250px;
+         margin-left: -125px;
+         background-color:#00b388;
+         color: #fff;
+         text-align: center;
+         border-radius: 2px;
+         padding: 16px;
+         position: fixed;
+         z-index:10;
+         left: 50%;
+         bottom: 30px;
+         font-size: 17px;
+         }
+         #snackbar.show {
+         visibility: visible;
+         -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+         animation: fadein 0.5s, fadeout 0.5s 2.5s;
+         }
+         @-webkit-keyframes fadein {
+         from {bottom: 0; opacity: 0;} 
+         to {bottom: 30px; opacity: 1;}
+         }
+         @keyframes fadein {
+         from {bottom: 0; opacity: 0;}
+         to {bottom: 30px; opacity: 1;}
+         }
+         @-webkit-keyframes fadeout {
+         from {bottom: 30px; opacity: 1;} 
+         to {bottom: 0; opacity: 0;}
+         }
+         @keyframes fadeout {
+         from {bottom: 30px; opacity: 1;}
+         to {bottom: 0; opacity: 0;}
+         }
+      </style>
+      <script type="text/javascript">
+         jQuery(document).ready(function () {
+         
+         	$("#enquiry_form_button").click(function(e){
+         
+             var enquiry_form = $('#enquiry_form').serialize();
+         
+             var subject =  $("#subject").val();
+         
+         	var release_name = $("#release_name").val();
+         
+         	var message =$("#message").val();
+         
+         	
+         
+         	if(subject =="" || release_name == "" || message == "")
+         
+         	{
+         
+         	$("#enquiry_form_err").show();
+         
+         	$("#enquiry_form_err").html('All fields are mandatory');
+         
+         	
+         
+         	}else
+         
+         	{
+         
+         $(".Gyro_loaderNew_footer").show();
+         
+         setTimeout( function(){
+         
+         // Do something after 1 second
+         
+         $.ajax({
+         
+          type : "POST",
+         
+          //dataType : "json",
+         
+          //dataType: "html",
+         
+          url : "/model/do_submit_enquiry.php",
+         
+          data:enquiry_form,
+         
+          }).done(function(response){
+         
+         	//alert(response);
+         
+         		if(response=="success")
+         
+         		{
+         
+         			$(".Gyro_loaderNew_footer").hide();
+         
+         			$("#enquiry_form_err").show();
+         
+         			$("#enquiry_form_err").html('Thank you for your enquiry. We will get back to you within 24hrs.');
+         
+                           $("#subject").val("Copyright Year");
+         
+         	        $("#release_name").val("");
+         
+         	        $("#message").val("");
+         
+         		 }else{
+         
+         			$(".Gyro_loaderNew_footer").hide();
+         
+         			$("#enquiry_form_err").show();
+         
+         			$("#enquiry_form_err").html(response);
+         
+         			 }
+         
+          });
+         
+         // to prevent refreshing the whole page page
+         
+         }  , 1000 );
+         
+         }
+         
+         });
+         
+         $("#mail_form_button").click(function(e){
+         
+         	var mail_form = $('#mail_form').serialize();
+         
+         	$("#mail_form_err").html("<img src='https://theblogbar.com/wp-content/uploads/2017/08/loading-1.gif' width='30px'>");
+         
+         	setTimeout( function(){
+         
+         	$.ajax({
+         
+         	 type : "POST",
+         
+         	 url : "/model/do_mail_form.php",
+         
+         	 data:mail_form,
+         
+         	 }).done(function(response){
+         
+         		if(response=="success"){
+         
+         			$("#mail_form").html("<img src='https://theblogbar.com/wp-content/uploads/2017/08/loading-1.gif' width='30px'>");
+         
+         			$("#mail_form_err").html('');
+         
+         			$("#mail_form").html('Thank you for your query, We will get back to you within 24hrs');
+         
+         		 }else{
+         
+         			$("#mail_form_err").show();
+         
+         			$("#mail_form_err").html(response);
+         
+         			 
+         
+         		 }
+         
+         	 });
+         
+         	}  , 1000 );
+         
+         	});
+         
+         });
+         
+      </script>
+      <script>
+         function footerPopup() {
+         
+         	var x = document.getElementById("snackbar");
+         
+         	x.className = "show";
+         
+         	setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+         
+         }
+         
+      </script>
+      <script>
+         /* This is the function to open the widget code */
+         
+         
+         function openWidget() {
+          FreshworksWidget('open');
+         }    
+             
+         function openWidgetArticle() {
+          FreshworksWidget('open', 'article', { id: 43000556672 });} 
+             
+         	window.fwSettings={
+         	'widget_id':43000000632
+         	};
+         	!function(){if("function"!=typeof window.FreshworksWidget){var n=function(){n.q.push(arguments)};n.q=[],window.FreshworksWidget=n}}() 
+      </script>
+      <script onload="FreshworksWidget('hide', 'launcher');" onload="FreshworksWidget('identify', 'ticketForm', {
+         name: $username,
+         email: $useremail,
+         });        
+         " type='text/javascript' src='https://widget.freshworks.com/widgets/43000000632.js' async defer></script>
+   </body>
+</html>
